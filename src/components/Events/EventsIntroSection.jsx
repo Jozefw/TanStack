@@ -13,7 +13,7 @@ export default function EventsIntroSection() {
         Connect with amazing people <br />
         or <strong>find a new passion</strong>
       </h2>
-      <p>Anyone can organize and join events on React Event!</p>
+      <p>Anyone can organize and join events on Next Level Events!</p>
       <p>
         <Link to="/events/new" className="button">
           Create your first event
