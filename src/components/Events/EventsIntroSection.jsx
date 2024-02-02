@@ -11,9 +11,8 @@ export default function EventsIntroSection() {
     >
       <h2>
         Connect with amazing people <br />
-        or <strong>find a new passion</strong>
+        and <strong>relive the 80's</strong>
       </h2>
-      <p>Anyone can organize and join events on Next Level Events!</p>
       <p>
         <Link to="/events/new" className="button">
           Create your first event
