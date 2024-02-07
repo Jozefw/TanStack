@@ -1,22 +1,30 @@
 [
   {
-    "path": "buzzing-city.jpg",
-    "caption": "People walking through a city buzzing with life at night."
+    "path": "arcades.jpg",
+    "caption": "Going HAM on video games."
   },
   {
-    "path": "laptop-on-desk.jpg",
-    "caption": "A laptop on a desk."
+    "path": "cars.jpg",
+    "caption": "Muscle Car Madness."
   },
   {
-    "path": "meeting-networking.jpg",
-    "caption": "A group of people meeting and networking."
+    "path": "clubscene.jpg",
+    "caption": "Thirsty for the Club Scene."
   },
   {
-    "path": "park.jpg",
-    "caption": "A park with a lake."
+    "path": "diners.jpeg",
+    "caption": "Getting Real Food."
   },
   {
-    "path": "women-coding.jpg",
-    "caption": "A group of women coding."
+    "path": "disco.jpeg",
+    "caption": "Mirror Ball."
+  },
+  {
+    "path": "makeup5.jpg",
+    "caption": "A New Face."
+  },
+  {
+    "path": "skate.jpeg",
+    "caption": "Thigh Actions."
   }
 ]
