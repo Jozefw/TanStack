@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {useQuery} from '@tanstack/react-query';
 import ImagePicker from '../ImagePicker.jsx';
-import { fetchImages } from '../../util/http.js';
+import { fetchSelectableImages } from '../../util/http.js';
 import ErrorBlock from '../UI/ErrorBlock.jsx';
 
 export default function EventForm({ inputData, onSubmit, children }) {
@@ -9,7 +9,7 @@ export default function EventForm({ inputData, onSubmit, children }) {
 
   const {data, isPending, isError} = useQuery({
     queryKey:['eventImages'],
-    queryFn:fetchImages
+    queryFn:fetchSelectableImages
   })
 
   function handleSelectImage(image) {
