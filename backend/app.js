@@ -1,7 +1,26 @@
 import fs from 'node:fs/promises';
-
+import path from 'path';
 import bodyParser from 'body-parser';
 import express from 'express';
+
+
+const _dirname = path.dirname("")
+const buildPath = path.join(_dirname  , "../client/build");
+
+app.use(express.static(buildPath))
+
+app.get("/*", function(req, res){
+
+    res.sendFile(
+        path.join(_dirname, "../client/build/index.html"),
+        function (err) {
+          if (err) {
+            res.status(500).send(err);
+          }
+        }
+      );
+
+})
 
 const app = express();
 
