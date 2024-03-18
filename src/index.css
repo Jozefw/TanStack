@@ -68,10 +68,10 @@ ul {
 }
 
 #overview-section h2 {
-  font-size: 3.5rem;
+  font-size: 5.5rem;
   margin: 2rem auto;
   color: #d1f700;
-  text-shadow: 2px 2px 3px rgb(0 0 0), 2px 2px 34px rgb(255 255 255), 2px 2px 34px rgb(0 0 0);
+  text-shadow: 4px 4px 4px rgb(0 0 0), 4px 4px 34px rgb(255 255 255), 4px 4px 34px rgb(0 0 0);
 }
 
 #overview-section h2 strong {
@@ -435,7 +435,12 @@ ul {
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
-
+.searchHintTitle{
+  margin-bottom: 0!important;
+}
+.searchHint{
+  margin-top:0;
+}
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);

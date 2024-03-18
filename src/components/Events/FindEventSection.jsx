@@ -42,7 +42,8 @@ export default function FindEventSection() {
   return (
     <section className="content-section" id="all-events-section">
       <header>
-        <h2>Find your next event!</h2>
+        <h2 className='searchHintTitle'>Find your next event!</h2>
+        <h4 className='searchHint'>( Click 'Search' with an empty field to show all )</h4>
         <form onSubmit={handleSubmit} id="search-form">
           <input
             type="search"
