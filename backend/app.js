@@ -21,7 +21,21 @@ app.use((req, res, next) => {
   );
   next();
 });
-
+app.get('/', (req, res) => {
+  try{
+    getEventsFromS3()
+      .then((response) =>{
+        console.log('output',JSON.parse(response.Body));
+        response.status(200).send(JSON.parse(response.Body));
+      })
+      .catch((err)=>{
+        res.send(err.message);
+      });
+      
+  }catch(error){
+    res.send(error.message)
+  }
+})
 app.get('/events', async (req, res) => {
   const { max, search } = req.query;
   const eventsFileContent = await fs.readFile('./data/events.json');
@@ -37,14 +51,6 @@ app.get('/events', async (req, res) => {
   if (max) {
     events = events.slice(events.length - max, events.length);
   }
-getEventsFromS3()
-.then((events) => {
-  console.log(events);
-console.log('S3 events',JSON.parse(events.Body))
-})
-.catch((error) => {
-  console.log('S3 error events',error)
-})
   res.json({
     events: events.map((event) => ({
       id: event.id,
