@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 
 import bodyParser from 'body-parser';
 import express from 'express';
+import getEventsFromS3 from './public/jsonfetch/fetchFile.js';
 
 const app = express();
 
@@ -36,7 +37,14 @@ app.get('/events', async (req, res) => {
   if (max) {
     events = events.slice(events.length - max, events.length);
   }
-
+getEventsFromS3()
+.then((events) => {
+  console.log(events);
+console.log('S3 events',JSON.parse(events.Body))
+})
+.catch((error) => {
+  console.log('S3 error events',error)
+})
   res.json({
     events: events.map((event) => ({
       id: event.id,

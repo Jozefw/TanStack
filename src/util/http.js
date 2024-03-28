@@ -4,7 +4,7 @@ export const queryClient = new QueryClient();
 
 export async function fetchEvents({ signal, searchTerm, max }) {
   console.log(searchTerm);
-  let url = 'https://35.171.4.129:3030/events';
+  let url = 'https://main.dl1pnqkdpppyc.amplifyapp.com/:3030/events';
 
   if (searchTerm && max){
     url += '?search=' + searchTerm + '&max' + max
@@ -30,7 +30,7 @@ export async function fetchEvents({ signal, searchTerm, max }) {
 
 
 export async function createNewEvent(eventData) {
-  const response = await fetch(`https://35.171.4.129:3030/events`, {
+  const response = await fetch(`https://main.dl1pnqkdpppyc.amplifyapp.com/:3030/events`, {
     method: 'POST',
     body: JSON.stringify(eventData),
     headers: {
@@ -51,7 +51,7 @@ export async function createNewEvent(eventData) {
 }
 
 export async function fetchSelectableImages({ signal }) {
-  const response = await fetch(`https://35.171.4.129:3030/events/images`, { signal });
+  const response = await fetch(`https://main.dl1pnqkdpppyc.amplifyapp.com/:3030/events/images`, { signal });
 
   if (!response.ok) {
     const error = new Error('An error occurred while fetching the images');
@@ -66,7 +66,7 @@ export async function fetchSelectableImages({ signal }) {
 }
 
 export async function fetchEvent({ id, signal }) {
-  const response = await fetch(`https://35.171.4.129:3030/events/${id}`, { signal });
+  const response = await fetch(`https://main.dl1pnqkdpppyc.amplifyapp.com/:3030/events/${id}`, { signal });
 
   if (!response.ok) {
     const error = new Error('An error occurred while fetching the event');
@@ -82,7 +82,7 @@ export async function fetchEvent({ id, signal }) {
 
 
 export async function deleteEvent({ id }) {
-  const response = await fetch(`https://35.171.4.129:3030/events/${id}`, {
+  const response = await fetch(`https://main.dl1pnqkdpppyc.amplifyapp.com/:3030/events/${id}`, {
     method: 'DELETE',
   });
 
@@ -97,7 +97,7 @@ export async function deleteEvent({ id }) {
 }
 
 export async function updateEvent({ id, event }) {
-  const response = await fetch(`https://35.171.4.129:3030/events/${id}`, {
+  const response = await fetch(`https://main.dl1pnqkdpppyc.amplifyapp.com/:3030/events/${id}`, {
     method: 'PUT',
     body: JSON.stringify({ event }),
     headers: {
